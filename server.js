@@ -4,6 +4,10 @@ require("dotenv").config();
 const dbConfig = require("./config/dbConfig");
 const port = process.env.PORT || 5000;
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 
 const usersRoute = require("./routes/usersRoute");
 const busesRoute = require("./routes/busesRoute");
